@@ -10,8 +10,12 @@ export const getRPCUrl = () => {
       'API Key Unset: You can use the Coinbase Developer Platform RPC by providing an API key in `OnchainKitProvider` or by manually calling `setOnchainKitConfig`: https://portal.cdp.coinbase.com/products/onchainkit',
     );
   }
+  const apiKey = ONCHAIN_KIT_CONFIG.apiKey;
+  if (apiKey && !/^[a-zA-Z0-9]{32}$/.test(apiKey)) {
+    throw new Error('Invalid API Key: The provided API key is not in the expected format.');
+  }
   return (
     ONCHAIN_KIT_CONFIG.rpcUrl ||
-    `https://api.developer.coinbase.com/rpc/v1/${ONCHAIN_KIT_CONFIG.chain.name.replace(' ', '-').toLowerCase()}/${ONCHAIN_KIT_CONFIG.apiKey}`
+    `https://api.developer.coinbase.com/rpc/v1/${ONCHAIN_KIT_CONFIG.chain.name.replace(' ', '-').toLowerCase()}/${apiKey}`
   );
 };
