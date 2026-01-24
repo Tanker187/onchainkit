@@ -8649,7 +8649,10 @@ __metadata:
     sitemap-generator: "npm:^8.5.1"
     tar: "npm:^7.0.0"
     typescript: "npm:latest"
+<<dependabot/npm_and_yarn/site/sha.js-2.4.12
     vite: "npm:^5.4.12"
+=======
+    vite: "npm:^5.4.21main
     vocs: "npm:1.0.0-alpha.62"
   languageName: unknown
   linkType: soft
@@ -11372,7 +11375,11 @@ __metadata:
   languageName: node
   linkType: hard
 
+<dependabot/npm_and_yarn/site/sha.js-2.4.12
 "vite@npm:^5.4.12":
+=======
+"vite@npm:^5.4.21":
+>main
   version: 5.4.21
   resolution: "vite@npm:5.4.21"
   dependencies:
